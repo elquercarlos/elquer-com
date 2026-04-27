@@ -1,0 +1,82 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<BaseHead title="Sobre — Elquer Carlos" description="Quem é Elquer Carlos. Dev, ator, pai. 20 anos na bolha tech, agora documentando a criação da Larissa." />
+	</head>
+	<body>
+		<Header />
+
+		<main class="container">
+			<article class="sobre">
+				<header class="page-header">
+					<h1>Sobre</h1>
+					<p class="lead">Dev, Ator, Pai. Perdido na bolha tech há 20 anos.</p>
+				</header>
+
+				<section>
+					<p>Sou Elquer Carlos. Moro em Florianópolis. Tenho 20 anos de carreira tech, com passagens como CEO da Rei do Coin, CTO da Bitwolf/Fiscochain, co-founder da CriptoPlanet, e palestrante cripto entre 2017 e 2020 com mais de 150 eventos, entre meetup e os maiores eventos do Brasil. Mantive coluna no CriptoFácil. Vivi de cripto antes do mundo entender o que era cripto.</p>
+
+					<p>Hoje meu foco é construir a <strong>Larissa</strong> — uma assistente IA que mora num Ubuntu Server dedicado, fala português, e (em breve) cuida do que minha cabeça não dá conta. Documento todo o processo aqui: decisões técnicas, bugs, pivots arquiteturais, custos reais.</p>
+				</section>
+
+				<section>
+					<h2>Por que documentar tudo</h2>
+					<p>Construir IA em 2026 é um caos delicioso. Toda semana algo muda — protocolos, modelos, ferramentas, custos. A maioria dos tutoriais envelhece em 3 meses. Decidi documentar enquanto construo, não depois.</p>
+					<p>Esse site é meu caderno público. Se alguém aprende algo lendo, ótimo. Se ninguém lê, também ótimo — é meu registro.</p>
+				</section>
+
+				<section>
+					<h2>O que vai acontecer aqui</h2>
+					<p>Todo dia (ou quase todo dia) sai um devlog. Conta o que rolou: o que construí, o que quebrou, o que pivotei, quanto custou. Sem motivacional fake. Sem clickbait.</p>
+					<p>Eventualmente vou abrir uma comunidade paga pra quem quiser conversar mais a fundo sobre os projetos. Não tem data. Vai sair quando fizer sentido.</p>
+				</section>
+
+				<div class="fim-do-ato">Fim do ato</div>
+			</article>
+		</main>
+
+		<Footer />
+
+		<style>
+			.sobre {
+				padding: var(--space-16) 0;
+				max-width: 680px;
+				margin: 0 auto;
+			}
+
+			.page-header {
+				margin-bottom: var(--space-12);
+			}
+
+			.page-header h1 {
+				font-size: clamp(2.5rem, 5vw, 3.5rem);
+			}
+
+			.lead {
+				font-size: var(--text-xl);
+				color: var(--text);
+				opacity: 0.75;
+				font-family: var(--font-display);
+				font-style: italic;
+				margin-top: var(--space-3);
+				font-variation-settings: "opsz" 24;
+			}
+
+			section {
+				margin-bottom: var(--space-12);
+			}
+
+			section h2 {
+				font-size: var(--text-2xl);
+				margin-bottom: var(--space-4);
+				margin-top: 0;
+			}
+		</style>
+	</body>
+</html>

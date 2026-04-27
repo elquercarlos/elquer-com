@@ -1,0 +1,133 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const projetos = [
+	{
+		nome: "Larissa",
+		status: "Em construção pública",
+		descricao: "Assistente IA pessoal rodando em Ubuntu Server dedicado. Hermes Agent + skills customizadas + persona próxima de pessoa, não bot. Documentação diária no devlog.",
+		links: [
+			{ texto: "Acompanhar no devlog", href: "/blog" },
+			{ texto: "YouTube", href: "https://youtube.com/@ElquerCarlos_ia" },
+		],
+	},
+	{
+		nome: "kmaroteApp",
+		status: "Em desenvolvimento",
+		descricao: "Plataforma de gestão de redes sociais. PHP puro MVC + Bootstrap 5 + PDO. Layer Node.js (social-poster) com Groq/Llama 3.3 70B + Playwright pra automação multi-plataforma. Ainda longe de pronto pra público.",
+		links: [],
+	},
+	{
+		nome: "Sheik de Floripa",
+		status: "Persona em produção",
+		descricao: "Personagem satírico deboísta — 'coach do fracasso'. Conteúdo distribuído em redes próprias. Em breve geração e distribuição automatizadas pela Larissa.",
+		links: [],
+	},
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<BaseHead title="Projetos — Elquer Carlos" description="Projetos atuais: Larissa, kmaroteApp, Sheik de Floripa." />
+	</head>
+	<body>
+		<Header />
+
+		<main class="container">
+			<article class="projetos">
+				<header class="page-header">
+					<h1>Projetos</h1>
+					<p class="lead">O que tô construindo agora.</p>
+				</header>
+
+				{projetos.map((p) => (
+					<section class="projeto">
+						<div class="projeto-header">
+							<h2>{p.nome}</h2>
+							<span class="status">{p.status}</span>
+						</div>
+						<p>{p.descricao}</p>
+						{p.links.length > 0 && (
+							<div class="links">
+								{p.links.map((l) => (
+									<a href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel={l.href.startsWith("http") ? "noopener" : undefined}>{l.texto} →</a>
+								))}
+							</div>
+						)}
+					</section>
+				))}
+
+				<div class="fim-do-ato">Fim do ato</div>
+			</article>
+		</main>
+
+		<Footer />
+
+		<style>
+			.projetos {
+				padding: var(--space-16) 0;
+				max-width: 680px;
+				margin: 0 auto;
+			}
+
+			.page-header {
+				margin-bottom: var(--space-12);
+			}
+
+			.lead {
+				font-size: var(--text-xl);
+				color: var(--text);
+				opacity: 0.75;
+				font-family: var(--font-display);
+				font-style: italic;
+				margin-top: var(--space-3);
+				font-variation-settings: "opsz" 24;
+			}
+
+			.projeto {
+				padding: var(--space-8) 0;
+				border-bottom: 1px solid var(--divider);
+			}
+
+			.projeto:last-of-type {
+				border-bottom: none;
+			}
+
+			.projeto-header {
+				display: flex;
+				align-items: baseline;
+				gap: var(--space-4);
+				flex-wrap: wrap;
+				margin-bottom: var(--space-3);
+			}
+
+			.projeto h2 {
+				margin: 0;
+				font-size: var(--text-2xl);
+			}
+
+			.status {
+				font-size: var(--text-xs);
+				font-family: var(--font-mono);
+				color: var(--accent);
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+
+			.links {
+				margin-top: var(--space-4);
+				display: flex;
+				gap: var(--space-6);
+				flex-wrap: wrap;
+			}
+
+			.links a {
+				font-size: var(--text-sm);
+				font-weight: 500;
+			}
+		</style>
+	</body>
+</html>

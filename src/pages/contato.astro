@@ -1,0 +1,100 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const canais = [
+	{ nome: "Email", valor: "msn@elquer.com", href: "mailto:msn@elquer.com" },
+	{ nome: "LinkedIn", valor: "/in/elquercarlos", href: "https://linkedin.com/in/elquercarlos" },
+	{ nome: "GitHub", valor: "@elquercarlos", href: "https://github.com/elquercarlos" },
+	{ nome: "YouTube", valor: "@ElquerCarlos_ia", href: "https://youtube.com/@ElquerCarlos_ia" },
+	{ nome: "Instagram", valor: "@ElquerCarlos", href: "https://instagram.com/elquercarlos" },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<BaseHead title="Contato — Elquer Carlos" description="Como falar com o Elquer." />
+	</head>
+	<body>
+		<Header />
+
+		<main class="container">
+			<article class="contato">
+				<header class="page-header">
+					<h1>Contato</h1>
+					<p class="lead">Onde me achar.</p>
+				</header>
+
+				<section>
+					<p>Resposta mais rápida via Telegram. Email funciona, mas leva mais tempo. Não respondo DM no Instagram pessoal.</p>
+				</section>
+
+				<section class="canais">
+					{canais.map((c) => (
+						<div class="canal">
+							<span class="canal-nome">{c.nome}</span>
+							<a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel={c.href.startsWith("http") ? "noopener" : undefined}>{c.valor}</a>
+						</div>
+					))}
+				</section>
+
+				<div class="fim-do-ato">Fim do ato</div>
+			</article>
+		</main>
+
+		<Footer />
+
+		<style>
+			.contato {
+				padding: var(--space-16) 0;
+				max-width: 680px;
+				margin: 0 auto;
+			}
+
+			.page-header {
+				margin-bottom: var(--space-12);
+			}
+
+			.lead {
+				font-size: var(--text-xl);
+				color: var(--text);
+				opacity: 0.75;
+				font-family: var(--font-display);
+				font-style: italic;
+				margin-top: var(--space-3);
+				font-variation-settings: "opsz" 24;
+			}
+
+			section {
+				margin-bottom: var(--space-12);
+			}
+
+			.canais {
+				display: flex;
+				flex-direction: column;
+				gap: var(--space-4);
+			}
+
+			.canal {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				padding: var(--space-4) 0;
+				border-bottom: 1px solid var(--divider);
+				gap: var(--space-4);
+				flex-wrap: wrap;
+			}
+
+			.canal-nome {
+				font-family: var(--font-mono);
+				font-size: var(--text-xs);
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: var(--text);
+				opacity: 0.6;
+			}
+		</style>
+	</body>
+</html>
