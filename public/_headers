@@ -4,7 +4,7 @@
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'strict-dynamic' https://assets.mailerlite.com https://groot.mailerlite.com https://static.mailerlite.com; style-src 'self' https://groot.mailerlite.com; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.mailerlite.com https://assets.mailerlite.com https://a.nel.cloudflare.com; frame-src https://*.mailerlite.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.mailerlite.com; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'strict-dynamic' https://assets.mailerlite.com https://groot.mailerlite.com https://static.mailerlite.com https://www.googletagmanager.com; style-src 'self' https://groot.mailerlite.com; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.mailerlite.com https://assets.mailerlite.com https://a.nel.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net; frame-src https://*.mailerlite.com; object-src 'none'; base-uri 'self'; form-action 'self' https://*.mailerlite.com; upgrade-insecure-requests
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
