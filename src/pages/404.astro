@@ -1,0 +1,82 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<BaseHead title="404 — Página não encontrada — Elquer Carlos" description="Essa página não existe ou foi movida." />
+	</head>
+	<body>
+		<Header />
+
+		<main class="container">
+			<article class="not-found">
+				<header class="page-header">
+					<p class="code">404</p>
+					<h1>Página não encontrada</h1>
+					<p class="lead">Essa URL não existe, ou existia e foi movida.</p>
+				</header>
+
+				<section>
+					<p>Algumas direções:</p>
+					<ul class="links">
+						<li><a href="/">Voltar pra home</a></li>
+						<li><a href="/blog">Ler o devlog</a></li>
+						<li><a href="/projetos">Ver os projetos</a></li>
+						<li><a href="/contato">Falar comigo</a></li>
+					</ul>
+				</section>
+
+				<div class="fim-do-ato">Fim do ato</div>
+			</article>
+		</main>
+
+		<Footer />
+
+		<style>
+			.not-found {
+				padding: var(--space-16) 0;
+				max-width: 680px;
+				margin: 0 auto;
+			}
+
+			.page-header {
+				margin-bottom: var(--space-12);
+			}
+
+			.code {
+				font-family: var(--font-mono);
+				font-size: var(--text-xs);
+				letter-spacing: 0.1em;
+				color: var(--accent);
+				margin: 0 0 var(--space-2);
+			}
+
+			.lead {
+				font-size: var(--text-xl);
+				color: var(--text);
+				opacity: 0.75;
+				font-family: var(--font-display);
+				font-style: italic;
+				margin-top: var(--space-3);
+				font-variation-settings: "opsz" 24;
+			}
+
+			.links {
+				list-style: none;
+				padding: 0;
+				margin: var(--space-4) 0 0;
+				display: flex;
+				flex-direction: column;
+				gap: var(--space-3);
+			}
+
+			.links a {
+				font-size: var(--text-lg);
+			}
+		</style>
+	</body>
+</html>
