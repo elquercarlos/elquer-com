@@ -8,7 +8,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 export default defineConfig({
 	site: 'https://elquer.com',
 	integrations: [mdx(), sitemap()],
-	experimental: {
+	security: {
 		csp: {
 			algorithm: 'SHA-256',
 			directives: [
