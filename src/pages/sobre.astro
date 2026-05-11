@@ -2,12 +2,30 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Elquer Carlos",
+	"url": new URL("/sobre/", Astro.site).toString(),
+	"jobTitle": "Dev, Ator, Pai",
+	"description": "20 anos na bolha tech. Ex-CEO Rei do Coin, ex-CTO Bitwolf/Fiscochain, co-founder CriptoPlanet. Hoje construindo Larissa, uma assistente IA em Ubuntu Server.",
+	"homeLocation": {
+		"@type": "Place",
+		"name": "Florianópolis, Brasil",
+	},
+	"sameAs": [
+		"https://youtube.com/@ElquerCarlos_ia",
+		"https://github.com/elquercarlos",
+		"https://linkedin.com/in/elquercarlos",
+	],
+};
 ---
 
 <!doctype html>
 <html lang="pt-BR">
 	<head>
-		<BaseHead title="Sobre — Elquer Carlos" description="Quem é Elquer Carlos. Dev, ator, pai. 20 anos na bolha tech, agora documentando a criação da Larissa." />
+		<BaseHead title="Sobre — Elquer Carlos" description="Quem é Elquer Carlos. Dev, ator, pai. 20 anos na bolha tech, agora documentando a criação da Larissa." jsonLd={jsonLd} />
 	</head>
 	<body>
 		<Header />

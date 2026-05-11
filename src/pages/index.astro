@@ -4,12 +4,34 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Newsletter from "../components/Newsletter.astro";
+
+const jsonLd = [
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": SITE_TITLE,
+		"url": new URL("/", Astro.site).toString(),
+		"description": SITE_DESCRIPTION,
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Elquer Carlos",
+		"url": new URL("/sobre/", Astro.site).toString(),
+		"description": "Dev, Ator, Pai. Documentando a construção da Larissa em público.",
+		"sameAs": [
+			"https://youtube.com/@ElquerCarlos_ia",
+			"https://github.com/elquercarlos",
+			"https://linkedin.com/in/elquercarlos",
+		],
+	},
+];
 ---
 
 <!doctype html>
 <html lang="pt-BR">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} jsonLd={jsonLd} />
 	</head>
 	<body>
 		<Header />
