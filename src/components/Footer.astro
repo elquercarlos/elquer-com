@@ -1,4 +1,6 @@
 ---
+import CookieBanner from "./CookieBanner.astro";
+
 const today = new Date();
 ---
 
@@ -9,9 +11,24 @@ const today = new Date();
 			<a href="https://youtube.com/@ElquerCarlos_ia" target="_blank" rel="noopener">YouTube</a>
 			<a href="https://github.com/elquercarlos" target="_blank" rel="noopener">GitHub</a>
 			<a href="https://linkedin.com/in/elquercarlos" target="_blank" rel="noopener">LinkedIn</a>
+			<button type="button" class="cookie-link" id="footer-cookie-link">Cookies</button>
 		</nav>
 	</div>
 </footer>
+
+<CookieBanner />
+
+<script is:inline>
+	(function () {
+		var link = document.getElementById("footer-cookie-link");
+		if (!link) return;
+		link.addEventListener("click", function () {
+			if (typeof window.elquerOpenCookieBanner === "function") {
+				window.elquerOpenCookieBanner();
+			}
+		});
+	})();
+</script>
 
 <style>
 	footer {
@@ -49,6 +66,23 @@ const today = new Date();
 	}
 
 	.social a:hover {
+		opacity: 1;
+		border-bottom-color: var(--accent);
+	}
+
+	.cookie-link {
+		background: transparent;
+		border: none;
+		padding: 0 0 2px 0;
+		color: var(--tinta-clara);
+		font-size: var(--text-sm);
+		font-family: inherit;
+		opacity: 0.75;
+		cursor: pointer;
+		border-bottom: 1px solid transparent;
+	}
+
+	.cookie-link:hover {
 		opacity: 1;
 		border-bottom-color: var(--accent);
 	}
