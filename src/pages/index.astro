@@ -39,21 +39,39 @@ const jsonLd = [
 		<section class="hero-spotlight">
 			<h1>Construindo Larissa em público.</h1>
 			<p>Dev, Ator, Pai. Perdido na bolha tech há 20 anos. Agora documentando a criação do meu substituto.</p>
-			<div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+			<div class="hero-actions">
 				<a href="/blog" class="btn-primary">Ler o devlog</a>
 				<a href="https://youtube.com/@ElquerCarlos_ia" target="_blank" rel="noopener" class="btn-secondary">YouTube</a>
 			</div>
 		</section>
 
 		<section class="container">
-			<div style="padding: 4rem 0;">
+			<div class="about-section">
 				<h2>O que rola aqui</h2>
 				<p>Todo dia eu construo um pedaço da Larissa — uma assistente IA que mora no meu Ubuntu Server, fala português, e (em breve) cuida de tudo que minha cabeça não dá conta. Aqui você lê o que aconteceu hoje: decisões, bugs, pivots, custos.</p>
 				<p>Sem motivacional fake. Sem clickbait. Documentação honesta de quem está construindo no escuro.</p>
-				<p style="margin-top: 2rem;"><a href="/blog">Ver todos os posts →</a></p>
+				<p class="cta-link"><a href="/blog">Ver todos os posts →</a></p>
 			</div>
 		</section>
 <Newsletter />
 		<Footer />
+
+		<style>
+			.hero-actions {
+				margin-top: 2rem;
+				display: flex;
+				gap: 1rem;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			.about-section {
+				padding: 4rem 0;
+			}
+
+			.cta-link {
+				margin-top: 2rem;
+			}
+		</style>
 	</body>
 </html>
