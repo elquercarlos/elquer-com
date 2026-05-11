@@ -15,7 +15,7 @@ export default defineConfig({
 				"default-src 'self'",
 				"img-src 'self' data: https:",
 				"font-src 'self' data:",
-				"connect-src 'self' https://*.mailerlite.com https://assets.mailerlite.com https://a.nel.cloudflare.com",
+				"connect-src 'self' https://*.mailerlite.com https://assets.mailerlite.com https://a.nel.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net",
 				"frame-src https://*.mailerlite.com",
 				"object-src 'none'",
 				"base-uri 'self'",
@@ -28,6 +28,7 @@ export default defineConfig({
 					"https://assets.mailerlite.com",
 					"https://groot.mailerlite.com",
 					"https://static.mailerlite.com",
+					"https://www.googletagmanager.com",
 				],
 			},
 			styleDirective: {
