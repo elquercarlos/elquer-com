@@ -7,6 +7,48 @@
 	</div>
 </section>
 
+<script is:inline>
+	(function () {
+		function loadMailerLite() {
+			(function (w, d, e, u, f, l, n) {
+				w[f] =
+					w[f] ||
+					function () {
+						(w[f].q = w[f].q || []).push(arguments);
+					};
+				l = d.createElement(e);
+				l.async = 1;
+				l.src = u;
+				n = d.getElementsByTagName(e)[0];
+				n.parentNode.insertBefore(l, n);
+			})(
+				window,
+				document,
+				"script",
+				"https://assets.mailerlite.com/js/universal.js",
+				"ml",
+			);
+			window.ml("account", "2297360");
+		}
+
+		var target = document.querySelector(".ml-embedded");
+		if (!target || !("IntersectionObserver" in window)) {
+			loadMailerLite();
+			return;
+		}
+		var observer = new IntersectionObserver(
+			function (entries) {
+				if (entries[0].isIntersecting) {
+					observer.disconnect();
+					loadMailerLite();
+				}
+			},
+			{ rootMargin: "200px" },
+		);
+		observer.observe(target);
+	})();
+</script>
+
 <style>
 	.newsletter-wrapper {
 		background: var(--palco);
