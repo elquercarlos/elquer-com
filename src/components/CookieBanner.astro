@@ -221,6 +221,16 @@
 </script>
 
 <style>
+	/* Respect the HTML `hidden` attribute — overrides the explicit
+	   `display: flex` set below on .cookie-modal. Without this,
+	   .cookie-modal[hidden] would still render because class-level
+	   `display: flex` takes precedence over the user-agent style
+	   `[hidden] { display: none }`. */
+	.cookie-banner[hidden],
+	.cookie-modal[hidden] {
+		display: none !important;
+	}
+
 	.cookie-banner {
 		position: fixed;
 		bottom: 0;
